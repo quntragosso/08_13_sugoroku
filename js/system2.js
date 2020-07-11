@@ -33,6 +33,9 @@ $(function () {
     };
     let nowplayer;
 
+
+
+
     if (gameStatus == "newgame") {
         $("#newgame_top").css("display", "flex");
     } else if (gameStatus == "loadgame") {
@@ -103,6 +106,8 @@ $(function () {
     });
 
     async function gameExists() {
+
+
         if (hostOrGuest == "host") {
             let existOrNot = false;
             await games_server.where("gameID", "==", gameID).get().then(function (querySnapshot) {
@@ -217,9 +222,7 @@ $(function () {
         });
     });
 
-    games_server.doc(gameID).onSnapshot(doc => function () {
-        console.log("true");
-
+    games_server.doc(gameID).onSnapshot(doc => async function () {
         function a() {
             player1 = doc.data().player1;
             player2 = doc.data().player2;
@@ -228,7 +231,7 @@ $(function () {
             nowplayer = doc.data().nowPlayer;
             console.log("true");
         }
-        a();
+        await a();
         playersRewrite();
         diceTouchable();
         playerNumberSearch();
@@ -237,5 +240,4 @@ $(function () {
 
 
     gameExists();
-
 });

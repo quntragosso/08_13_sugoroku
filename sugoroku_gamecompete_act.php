@@ -28,19 +28,19 @@ if ($result[0]["player1"] == $username) {
     $_SESSION["playerNumber"] = "player1";
     $_SESSION["host_or_guest"] = "guest";
     $_SESSION["game_id"] = $game_id;
-    header("Location:sugoroku_games.php");
+    header("Location:sugoroku_game.php");
     exit();
 } else if ($result[0]["player2"] == $username) {
     $_SESSION["playerNumber"] = "player2";
     $_SESSION["host_or_guest"] = "guest";
     $_SESSION["game_id"] = $game_id;
-    header("Location:sugoroku_games.php");
+    header("Location:sugoroku_game.php");
     exit();
 } else if ($result[0]["player3"] == $username) {
     $_SESSION["playerNumber"] = "player3";
     $_SESSION["host_or_guest"] = "guest";
     $_SESSION["game_id"] = $game_id;
-    header("Location:sugoroku_games.php");
+    header("Location:sugoroku_game.php");
     exit();
 } else if ($result[0]["player4"] == $username) {
     $_SESSION["playerNumber"] = "player4";

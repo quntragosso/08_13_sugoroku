@@ -43,8 +43,7 @@ if ($is_admin == 0) {
         // ログインできたら情報をsession領域に保存して一覧ページへ移動
         $_SESSION = array(); // セッション変数を空にする
         $_SESSION["session_id"] = session_id();
-        $_SESSION["is_admin"] = $val["is_admin"];
-        $_SESSION["username"] = $val["username"];
+        $_SESSION["username"] = $username;
         header("Location:sugoroku_userpage.php");
         exit();
     }
